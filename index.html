@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>charity group of @xvyurui</title>
+    <style type="text/css">
+        canvas{ border: 1px solid #000000;}
+        p{
+            font-family: '行楷';
+            font-size:20px;
+        }
+        body{background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.ccutu.com%2Fupload%2Fimage%2F20170906%2F6364032504845713142643245.jpg&refer=http%3A%2F%2Fimg.ccutu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669387297&t=5c4256ca037bc003164e5a211843a19c);background-size: 100%;}
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+         
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url(images/background.jpg) no-repeat 0px 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+         
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+         
+        #loginDiv {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: rgba(246, 250, 250, 0.6);
+            box-shadow: 7px 7px 17px rgba(246, 250, 250, 0.4);
+            border-radius: 300px;
+        }
+         
+        #loginDiv:hover{  
+           filter: grayscale(60%);
+        }  
+ 
+        input{
+            text-align: center;
+            border:none; 
+            background-color: rgba(239, 248, 250, 0.1);
+            border-bottom:1px solid rgb(250, 250, 251);
+            width: 200px;
+            
+        }
+ 
+        #L_login {
+            border-color: cornsilk;
+            background-color: rgba(3, 3, 3, 0.8);
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 5px;
+            width: 100px;
+            height: 31px;
+            font-size: 16px;
+        }
+ 
+        #L_register {
+            border-color: cornsilk;
+            background-color: rgba(10, 11, 11, 0.8);
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 5px;
+            width: 100px;
+            height: 31px;
+            font-size: 16px;
+        }
+    </style>
+    <style>
+
+        :root {
+    
+      --height: 100px;
+    
+      --width: 200px;
+    
+    }
+    
+    * {
+    
+      margin: 0;
+    
+      padding: 0;
+    
+      box-sizing: border-box;
+    
+    }
+    
+    body {
+    
+      width: 100%;
+    
+      height: 100vh;
+    
+     
+    
+      font-family: sans-serif;
+    
+    }
+    
+    .wrapper {
+    
+      width: calc(4 * var(--width));
+    
+      height: calc(4 * var(--height));
+    
+      display: flex;
+    
+      justify-content: center;
+    
+      align-items: center;
+    
+    }
+    
+    .button {
+    
+      position: relative;
+    
+      width: calc(0.8 * var(--width));
+    
+      height: calc(0.7 * var(--height));
+    
+      display: flex;
+    
+      justify-content: center;
+    
+      align-items: center;
+    
+      cursor: pointer;
+    
+      overflow: hidden;
+    
+      margin: 0 0.8rem;
+    
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.1);
+    
+      transition: all 0.3s cubic-bezier(0, 0.22, 0.3, 1);
+    
+    }
+    
+    .button:before {
+    
+      content: '';
+    
+      position: absolute;
+    
+      top: 0;
+    
+      left: 0;
+    
+      right: 0;
+    
+      bottom: 0;
+    
+      background: rgba(0, 0, 0, 0.1);
+    
+    }
+    
+    .button span {
+    
+      color: #fff;
+    
+      font-size: 1rem;
+    
+      z-index: 10;
+    
+      text-transform: uppercase;
+    
+      letter-spacing: 2px;
+    
+    }
+    
+    .button._1 {
+    
+      background: #36cac3;
+    
+    }
+    
+    .button._2 {
+    
+      background: #7e44ad;
+    
+    }
+    
+    .button._3 {
+    
+      background: #e74c3c;
+    
+    }
+    
+    .button._4 {
+    
+      background: #dadd37;
+    
+    }
+    
+    .button .back {
+    
+      position: absolute;
+    
+      width: 0;
+    
+      height: 0;
+    
+      filter: url(#filter);
+    
+      border-radius: 50%;
+    
+      z-index: 5;
+    
+      transition: all 2.5s cubic-bezier(0.1, 0.22, 0.3, 1);
+    
+    }
+    
+    .button._1 .back {
+    
+      left: -50%;
+    
+      top: -50%;
+    
+      background: #27ae60;
+    
+    }
+    
+    .button._2 .back {
+    
+      right: -50%;
+    
+      top: -50%;
+    
+      background: #c0392b;
+    
+    }
+    
+    .button._3 .back {
+    
+      left: -50%;
+    
+      bottom: -50%;
+    
+      background: #34495e;
+    
+    }
+    
+    .button._4 .back {
+    
+      right: -50%;
+    
+      bottom: -50%;
+    
+      background: #2980b9;
+    
+    }
+    
+    .button:hover .back {
+    
+      width: calc(2 * var(--width));
+    
+      height: calc(2 * var(--height));
+    
+    }
+    
+    @media only screen and (max-width: 750px) {
+    
+      .wrapper {
+    
+        flex-direction: column;
+    
+      }
+    
+      .button {
+    
+        margin: 0.8rem 0;
+    
+      }
+    
+    }
+    
+    </style>
+</head>
+ 
+<body>
+   
+    <div id="loginDiv">
+        <form action="" id="form">
+            <table>
+                <h2 style="text-align: center; color: rgb(7, 7, 7);">徐雨锐网课慈善基金会</h2></br>
+                
+           </table>
+        </br>
+        <p style="text-align: center;color: rgb(246, 250, 252);"><a href="#"></a></p>
+        <div style="text-align: center;margin-top: 15px;">
+            <input type="button" id="L_login" value="进入捐款页面" onclick=javascrtpt:jump1()>
+            
+        </div>
+        </form>
+    </div>
+    <script>
+ 
+        function jump1(){
+            window.location.href='https://renarddsfsdfdsfefadfsdfd.github.io/donate/';
+ 
+          
+        }
+        
+    </script>
+    <div class="wrapper">
+
+        <div class="button _1"><span> 有关徐雨锐先生</span>
+      
+          <div class="back"></div>
+      
+        </div>
+      
+        <div class="button _2"> <span>关于项目的简介</span>
+      
+          <div class="back"></div>
+      
+        </div>
+      
+        <div class="button _3"> <span>年度雨锐奖公布</span>
+      
+          <div class="back"></div>
+      
+        </div>
+      
+        <div class="button _4"> <span>反馈</span>
+      
+          <div class="back"></div>
+      
+        </div>
+      
+      </div>
+      
+      <div style="text-align:center;clear:both;">
+      
+      </div>
+      
+
+
+</body>
+</html>
+
+
